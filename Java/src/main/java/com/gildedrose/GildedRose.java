@@ -7,6 +7,14 @@ class GildedRose {
         this.items = items;
     }
 
+    public void maintainQualityWithinLimit() {
+        for (int i = 0; i < items.length; i++) {
+            if (items[i].quality > 50 && !items[i].name.equals("Sulfuras, Hand of Ragnaros") ) {
+                items[i].quality = 50;
+            }
+        }
+    }
+
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
             if (!items[i].name.equals("Aged Brie")

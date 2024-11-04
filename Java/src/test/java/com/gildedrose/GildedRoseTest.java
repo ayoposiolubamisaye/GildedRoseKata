@@ -51,5 +51,16 @@ class GildedRoseTest {
         assertEquals(0, items[0].quality, "Quality should never be negative");
     }
 
+    // Requirement: The Quality of an item is never above 50
+    @Test
+    void testQualityNeverOverFifty() {
+        Item[] items = new Item[]{new Item("normal item", 5, 100)};
+        GildedRose app = new GildedRose(items);
+        app.maintainQualityWithinLimit();
+        assertEquals(50, items[0].quality, "Quality should never be above 50");
+    }
+
+
+
 
 }
